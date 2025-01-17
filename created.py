@@ -53,6 +53,7 @@ def banner():
     os.system("clear")
     print(f"{W}<{R}•{W}> FACEBOOK AUTO ID CREATOR")
     print(f"{W}<{R}•{W}> CODED :- {G} MOSABBIR HOSSAIN SAJIB")
+    print(f"{W}<{R}•{W}> whatapps :- 01725825367")
     print(f"{W}———————————————————————————————")
 
 def linex():
