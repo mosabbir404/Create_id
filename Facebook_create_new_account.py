@@ -52,7 +52,7 @@ def GetCode(email):
 def banner():
     os.system("clear")
     print(f"{W}<{R}•{W}> FACEBOOK AUTO ID CREATOR")
-    print(f"{W}<{R}•{W}> CODED :- {G}HADI ANHAF AIMAN")
+    print(f"{W}<{R}•{W}> CODED :- {G} MOSABBIR HOSSAIN SAJIB")
     print(f"{W}———————————————————————————————")
 
 def linex():
@@ -107,7 +107,7 @@ def main() -> None:
             'use_custom_gender': "false",
             'guid': "",
             'pre_form_step': "",
-            'encpass': '#PWD_BROWSER:0:{}:{}'.format(str(time.time()).split('.')[0],"MrCode@123"),
+            'encpass': '#PWD_BROWSER:0:{}:{}'.format(str(time.time()).split('.')[0],"mosabbir"),
             'submit': "Sign Up",
             'fb_dtsg': "NAcMC2x5X2VrJ7jhipS0eIpYv1zLRrDsb5y2wzau2bw3ipw88fbS_9A:0:0",
             'jazoest': str(formula["jazoest"]),
@@ -230,8 +230,8 @@ def confirm_id(mail,uid,otp,data,ses):
             linex()
         else:
             cookie = (";").join([ "%s=%s" % (key,value) for key,value in ses.cookies.get_dict().items()])
-            print(f"{X} SUCCESS - {G}{uid}|MrCode@123|{cookie}")
-            open("/sdcard/SUCCESS-OK-ID.txt","a").write(uid+"|MrCode@123|"+cookie+"\n")
+            print(f"{X} SUCCESS - {G}{uid}|mosabbir|{cookie}")
+            open("/sdcard/SUCCESS-OK-ID.txt","a").write(uid+"|mosabbir|"+cookie+"\n")
             linex()
     except Exception as e:
         linex()
