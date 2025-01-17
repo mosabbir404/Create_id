@@ -1,223 +1,241 @@
-#CAPTURED BY SHAJON
+import os,sys,re,time,json
+import requests,bs4,string
+import faker,fake_email,random
+from faker import Faker
+from fake_email import Email
+from bs4 import BeautifulSoup
 
-import requests
+W = "\x1b[97m"
+G = "\x1b[38;5;46m"
+R = "\x1b[38;5;196m"
+X = f"{W}<{R}•{W}>"
 
-cookies = {
-    'datr': 'Lo4vZ5sKrHmuKkkVf1sqXLgc',
-    'sb': 'x4N3Zxh0PwvOch3gN49HKkzR',
-    'locale': 'en_GB',
-    'dpr': '3.1883959770202637',
-    'ps_l': '1',
-    'ps_n': '1',
-    'fr': '0qLiDDXWY7xeKXjPZ.AWVkJkKBioJ92Hxa18eAk5ujtSk.BnL44u..AAA.0.0.BniSxD.AWUtPXPRoMA',
-    'wd': '980x1931',
-}
+oks = []
+cps = []
 
-headers = {
-    'authority': 'www.facebook.com',
-    'accept': '*/*',
-    'accept-language': 'en-US,en;q=0.9,bn-BD;q=0.8,bn;q=0.7',
-    'content-type': 'application/x-www-form-urlencoded',
-    # 'cookie': 'datr=Lo4vZ5sKrHmuKkkVf1sqXLgc; sb=x4N3Zxh0PwvOch3gN49HKkzR; locale=en_GB; dpr=3.1883959770202637; ps_l=1; ps_n=1; fr=0qLiDDXWY7xeKXjPZ.AWVkJkKBioJ92Hxa18eAk5ujtSk.BnL44u..AAA.0.0.BniSxD.AWUtPXPRoMA; wd=980x1931',
-    'origin': 'https://www.facebook.com',
-    'referer': 'https://www.facebook.com/r.php?entry_point=login',
-    'sec-ch-prefers-color-scheme': 'dark',
-    'sec-ch-ua': '"Not-A.Brand";v="99", "Chromium";v="124"',
-    'sec-ch-ua-full-version-list': '"Not-A.Brand";v="99.0.0.0", "Chromium";v="124.0.6327.4"',
-    'sec-ch-ua-mobile': '?0',
-    'sec-ch-ua-model': '""',
-    'sec-ch-ua-platform': '"Linux"',
-    'sec-ch-ua-platform-version': '""',
-    'sec-fetch-dest': 'empty',
-    'sec-fetch-mode': 'cors',
-    'sec-fetch-site': 'same-origin',
-    'user-agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36',
-    'x-asbd-id': '129477',
-    'x-fb-lsd': 'AVpevgrYFgw',
-}
+from fake_useragent import UserAgent
+ua = UserAgent()
+def ugenX():
+    ualist = [ua.random for _ in range(50)]
+    return str(random.choice(ualist))
 
-data = {
-    'jazoest': '21080',
-    'lsd': 'AVpevgrYFgw',
-    'firstname': 'Atif',
-    'lastname': 'Akbar',
-    'birthday_day': '24',
-    'birthday_month': '11',
-    'birthday_year': '2000',
-    'birthday_age': '',
-    'did_use_age': 'false',
-    'sex': '2',
-    'preferred_pronoun': '',
-    'custom_gender': '',
-    'reg_email__': 'tarantula54twyw29@mixzu.net',
-    'reg_email_confirmation__': '',
-    'reg_passwd__': '#PWD_BROWSER:5:1737043051:AW1QAAe1FNYH299KHUA11oIQJGuJa0TaYubexkC97yc9Lu0TetgRdplkE4JNy2woghIUPL7nylzKyX7MnUlZK9gkzK/0MKNc11NEcwXuOuVTyFrH4HOi0jNBb+rGTMuaUPLra3QY0aOMwOTuXb8=',
-    'referrer': '',
-    'asked_to_login': '0',
-    'use_custom_gender': '',
-    'terms': 'on',
-    'ns': '0',
-    'ri': '7ac686a6-5e49-4b1f-8b3a-9a9d06a5134d',
-    'action_dialog_shown': '',
-    'invid': '',
-    'a': '',
-    'oi': '',
-    'locale': 'en_GB',
-    'app_bundle': '',
-    'app_data': '',
-    'reg_data': '',
-    'app_id': '',
-    'fbpage_id': '',
-    'reg_oid': '',
-    'reg_instance': 'Lo4vZ5sKrHmuKkkVf1sqXLgc',
-    'openid_token': '',
-    'uo_ip': '',
-    'guid': '',
-    'key': '',
-    're': '',
-    'mid': '',
-    'fid': '',
-    'reg_dropoff_id': '',
-    'reg_dropoff_code': '',
-    'ignore': 'captcha|reg_email_confirmation__',
-    'captcha_persist_data': 'AZlkQh0mZpZIJNywXRFhfIkTwk17lS8DfTQjHCA9XGsPi_K9gq9TUqS6sS7JbcmQlLF4x5LagE1AQlW1KS60_ZE5vs2tuw2C9C0pJqw3Sj3Qoi794c9mKovkcOvUNQ_soPTc8e6yuYM4ekqeTnBbkaQWmmqb4eBNXwWKb3S-9nliIDJI0M_-8Vs5vUkGUVNGx1QZOWnkK46IGtFzlq77ZAzlKOpd0QUAJw9N0xE_9d_H968XJfb5a81vKhJsx3RoIEg9xblSibOTplfF5MqSlFORjSrr0_Rm1W-99lC-Ay7qYjZqi50iUDGe_dIPOKs1GhFGLN3_hHQmshcIXfJc7d0imywhONX_n0vlK1rxi3ZuL7rbf7u26ZzOpZSEqIeTARI',
-    'captcha_response': '',
-    '__user': '0',
-    '__a': '1',
-    '__req': '7',
-    '__hs': '20104.BP:DEFAULT.2.0.0.0.0',
-    'dpr': '3',
-    '__ccg': 'EXCELLENT',
-    '__rev': '1019376741',
-    '__s': 'wszick:tb5kvq:0h3u6k',
-    '__hsi': '7460542925810636607',
-    '__dyn': '7xe6EsK36Q5E5ObwKBWg5S1Dxu13wqovzEdEc8uw9-3K0lW4o3Bw5VCwjE3awdu0FE2awpUO0n24o5-0me1Fw5uwbO0KU3mwaS0zE5W08HwSyE1582ZwrU1Xo1UU3jwea',
-    '__csr': '',
-    '__spin_r': '1019376741',
-    '__spin_b': 'trunk',
-    '__spin_t': '1737043011',
-}
+def fake_name():
+    first = Faker().first_name()
+    last = Faker().last_name()
+    return first,last
 
-response = requests.post('https://www.facebook.com/ajax/register.php', cookies=cookies, headers=headers, data=data)
+def extractor(data):
+    try:
+        soup = BeautifulSoup(data,"html.parser")
+        data = {}
+        for inputs in soup.find_all("input"):
+            name = inputs.get("name")
+            value = inputs.get("value")
+            if name:
+                data[name] = value
+        return data
+    except Exception as e:
+        return {"error":str(e)}
 
+def GetEmail():
+    response = requests.post('https://api.internal.temp-mail.io/api/v3/email/new').json()
+    return response['email']
 
-import requests
+def GetCode(email):
+    try:
+        response = requests.get(f'https://api.internal.temp-mail.io/api/v3/email/{email}/messages').text
+        code = re.search(r'FB-(\d+)', response).group(1)
+        return code
+    except:
+        return None
 
-cookies = {
-    'datr': 'Lo4vZ5sKrHmuKkkVf1sqXLgc',
-    'sb': 'x4N3Zxh0PwvOch3gN49HKkzR',
-    'wd': '980x1931',
-    'c_user': '61572374241804',
-    'fr': '0qLiDDXWY7xeKXjPZ.AWVSaBlwuR2xsZAVHUOwksDImyw.BnL44u..AAA.0.0.BniSqe.AWV7IjH2aXo',
-    'locale': 'en_GB',
-    'xs': '37%3Apub4Iso1AcugOA%3A2%3A1737042601%3A-1%3A-1',
-    'dpr': '3.1883959770202637',
-}
+def banner():
+    os.system("clear")
+    print(f"{W}<{R}•{W}> FACEBOOK AUTO ID CREATOR")
+    print(f"{W}<{R}•{W}> CODED :- {G}HADI ANHAF AIMAN")
+    print(f"{W}———————————————————————————————")
 
-headers = {
-    'authority': 'www.facebook.com',
-    'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
-    'accept-language': 'en-US,en;q=0.9,bn-BD;q=0.8,bn;q=0.7',
-    # 'cookie': 'datr=Lo4vZ5sKrHmuKkkVf1sqXLgc; sb=x4N3Zxh0PwvOch3gN49HKkzR; wd=980x1931; c_user=61572374241804; fr=0qLiDDXWY7xeKXjPZ.AWVSaBlwuR2xsZAVHUOwksDImyw.BnL44u..AAA.0.0.BniSqe.AWV7IjH2aXo; locale=en_GB; xs=37%3Apub4Iso1AcugOA%3A2%3A1737042601%3A-1%3A-1; dpr=3.1883959770202637',
-    'dpr': '2.9000000953674316',
-    'referer': 'https://www.facebook.com/r.php',
-    'sec-ch-prefers-color-scheme': 'dark',
-    'sec-ch-ua': '"Not-A.Brand";v="99", "Chromium";v="124"',
-    'sec-ch-ua-full-version-list': '"Not-A.Brand";v="99.0.0.0", "Chromium";v="124.0.6327.4"',
-    'sec-ch-ua-mobile': '?0',
-    'sec-ch-ua-model': '""',
-    'sec-ch-ua-platform': '"Linux"',
-    'sec-ch-ua-platform-version': '""',
-    'sec-fetch-dest': 'document',
-    'sec-fetch-mode': 'navigate',
-    'sec-fetch-site': 'same-origin',
-    'upgrade-insecure-requests': '1',
-    'user-agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36',
-    'viewport-width': '980',
-}
+def linex():
+    print(f"{W}———————————————————————————————")
 
-params = {
-    'next': 'https://www.facebook.com/?lsrc=lbr',
-    '__req': 'a',
-}
+def main() -> None:
+    banner()
+    input(f"{X} PRESS ENTER TO START....")
+    linex()
+    for make in range(100):
+        ses = requests.Session()
+        response = ses.get(
+            url='https://x.facebook.com/reg',
+            params={"_rdc":"1","_rdr":"","wtsid":"rdr_0t3qOXoIHbMS6isLw","refsrc":"deprecated"},
+        )
+        mts = ses.get("https://x.facebook.com").text
+        m_ts = re.search(r'name="m_ts" value="(.*?)"',str(mts)).group(1)
+        formula = extractor(response.text)
+        email2 = GetEmail()
+        firstname,lastname = fake_name()
+        print(f"{X} NAME  - {G}{firstname} {lastname}")
+        print(f"{X} EMAIL - {G}{email2}")
+        payload = {
+            'ccp': "2",
+            'reg_instance': str(formula["reg_instance"]),
+            'submission_request': "true",
+            'helper': "",
+            'reg_impression_id': str(formula["reg_impression_id"]),
+            'ns': "1",
+            'zero_header_af_client': "",
+            'app_id': "103",
+            'logger_id': str(formula["logger_id"]),
+            'field_names[0]': "firstname",
+            'firstname': firstname,
+            'lastname': lastname,
+            'field_names[1]': "birthday_wrapper",
+            'birthday_day': str(random.randint(1,28)),
+            'birthday_month': str(random.randint(1,12)),
+            'birthday_year': str(random.randint(1992,2009)),
+            'age_step_input': "",
+            'did_use_age': "false",
+            'field_names[2]': "reg_email__",
+            'reg_email__': email2,
+            'field_names[3]': "sex",
+            'sex': "2",
+            'preferred_pronoun': "",
+            'custom_gender': "",
+            'field_names[4]': "reg_passwd__",
+            'name_suggest_elig': "false",
+            'was_shown_name_suggestions': "false",
+            'did_use_suggested_name': "false",
+            'use_custom_gender': "false",
+            'guid': "",
+            'pre_form_step': "",
+            'encpass': '#PWD_BROWSER:0:{}:{}'.format(str(time.time()).split('.')[0],"MrCode@123"),
+            'submit': "Sign Up",
+            'fb_dtsg': "NAcMC2x5X2VrJ7jhipS0eIpYv1zLRrDsb5y2wzau2bw3ipw88fbS_9A:0:0",
+            'jazoest': str(formula["jazoest"]),
+            'lsd': str(formula["lsd"]),
+            '__dyn': "1ZaaAG1mxu1oz-l0BBBzEnxG6U4a2i5U4e0C8dEc8uwcC4o2fwcW4o3Bw4Ewk9E4W0pKq0FE6S0x81vohw5Owk8aE36wqEd8dE2YwbK0iC1qw8W0k-0jG3qaw4kwbS1Lw9C0le0ue0QU",
+            '__csr': "",
+            '__req': "p",
+            '__fmt': "1",
+            '__a': "AYkiA9jnQluJEy73F8jWiQ3NTzmH7L6RFbnJ_SMT_duZcpo2yLDpuVXfU2doLhZ-H1lSX6ucxsegViw9lLO6uRx31-SpnBlUEDawD_8U7AY4kQ",
+            '__user': "0"
+        }
+        header1 = {
+            "Host":"m.facebook.com",
+            "Connection":"keep-alive",
+            "Upgrade-Insecure-Requests":"1",
+            "User-Agent":ugenX(),
+            "Accept":"text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+            "dnt":"1",
+            "X-Requested-With":"mark.via.gp",
+            "Sec-Fetch-Site":"none",
+            "Sec-Fetch-Mode":"navigate",
+            "Sec-Fetch-User":"?1",
+            "Sec-Fetch-Dest":"document",
+            "dpr":"1.75",
+            "viewport-width":"980",
+            "sec-ch-ua":"\"Android WebView\";v=\"131\", \"Chromium\";v=\"131\", \"Not_A Brand\";v=\"24\"",
+            "sec-ch-ua-mobile":"?1",
+            "sec-ch-ua-platform":"\"Android\"",
+            "sec-ch-ua-platform-version":"\"\"",
+            "sec-ch-ua-model":"\"\"",
+            "sec-ch-ua-full-version-list":"",
+            "sec-ch-prefers-color-scheme":"dark",
+            "Accept-Encoding":"gzip, deflate, br, zstd",
+            "Accept-Language":"en-GB,en-US;q=0.9,en;q=0.8"
+        }
+        reg_url = "https://www.facebook.com/reg/submit/?privacy_mutation_token=eyJ0eXBlIjowLCJjcmVhdGlvbl90aW1lIjoxNzM0NDE0OTk2LCJjYWxsc2l0ZV9pZCI6OTA3OTI0NDAyOTQ4MDU4fQ%3D%3D&multi_step_form=1&skip_suma=0&shouldForceMTouch=1"
+        py_submit = ses.post(reg_url, data=payload, headers=header1)
+        #print(ses.cookies.get_dict().items())
+        if "c_user" in py_submit.cookies:
+            first_cok = ses.cookies.get_dict()
+            uid = str(first_cok["c_user"])
+            header2 = {
+                'authority': 'm.facebook.com',
+                'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
+                'accept-language': 'id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7',
+                'cache-control': 'max-age=0',
+                'dpr': '2',
+                'referer': 'https://m.facebook.com/login/save-device/',
+                'sec-ch-prefers-color-scheme': 'light',
+                'sec-ch-ua': '"Not/A)Brand";v="8", "Chromium";v="125", "Google Chrome";v="125"',
+                'sec-ch-ua-mobile': '?1',
+                'sec-ch-ua-platform': '"Android"',
+                'sec-fetch-dest': 'document',
+                'sec-fetch-mode': 'navigate',
+                'sec-fetch-site': 'same-origin',
+                'sec-fetch-user': '?1',
+                'upgrade-insecure-requests': '1',
+                'user-agent': ugenX(),
+                'viewport-width': '980',      
+            }
+            params = {
+                'next': 'https://m.facebook.com/?deoia=1',
+                'soft': 'hjk',
+            }
+            con_sub = ses.get('https://x.facebook.com/confirmemail.php', params=params, headers=header2).text
+            valid = GetCode(email2)
+            if valid:
+                print(f"{X} FB UID - {G}{uid}")
+                print(f"{X} LOGIN OTP - {G}{valid}")
+                confirm_id(email2,uid,valid,con_sub,ses)
+            else:
+                print(f"{X} \x1b[38;5;206mSUCCESSFULLY DISABLED ID")
+                linex()
+        else:
+            print(f"{X} {R}SUCCESSFULLY CHECKPOINT ID")
+            linex()
 
-response = requests.get('https://www.facebook.com/confirmemail.php', params=params, cookies=cookies, headers=headers)
+def confirm_id(mail,uid,otp,data,ses):
+    try:
+        url = "https://m.facebook.com/confirmation_cliff/"
+        params = {
+        'contact': mail,
+        'type': "submit",
+        'is_soft_cliff': "false",
+        'medium': "email",
+        'code': otp}
+        payload = {
+        'fb_dtsg': 'NAcMC2x5X2VrJ7jhipS0eIpYv1zLRrDsb5y2wzau2bw3ipw88fbS_9A:0:0',
+        'jazoest': re.search(r'"\d+"', data).group().strip('"'),
+        'lsd': re.search('"LSD",\[\],{"token":"([^"]+)"}',str(data)).group(1),
+        '__dyn': "",
+        '__csr': "",
+        '__req': "4",
+        '__fmt': "1",
+        '__a': "",
+        '__user': uid}
+        headers = {
+        'User-Agent': ugenX(),
+        'Accept-Encoding': "gzip, deflate, br, zstd",
+        'sec-ch-ua-full-version-list': "",
+        'sec-ch-ua-platform': "\"Android\"",
+        'sec-ch-ua': "\"Android WebView\";v=\"131\", \"Chromium\";v=\"131\", \"Not_A Brand\";v=\"24\"",
+        'sec-ch-ua-model': "\"\"",
+        'sec-ch-ua-mobile': "?1",
+        'x-asbd-id': "129477",
+        'x-fb-lsd': "KnpjLz-YdSXR3zBqds98cK",
+        'sec-ch-prefers-color-scheme': "light",
+        'sec-ch-ua-platform-version': "\"\"",
+        'origin': "https://m.facebook.com",
+        'x-requested-with': "mark.via.gp",
+        'sec-fetch-site': "same-origin",
+        'sec-fetch-mode': "cors",
+        'sec-fetch-dest': "empty",
+        'referer': "https://m.facebook.com/confirmemail.php?next=https%3A%2F%2Fm.facebook.com%2F%3Fdeoia%3D1&soft=hjk",
+        'accept-language': "en-GB,en-US;q=0.9,en;q=0.8",
+        'priority': "u=1, i"}
+        response = ses.post(url, params=params, data=payload, headers=headers)
+        if "checkpoint" in str(response.url):
+            print(f"{X}{R} FUCKED ID DISABLED")
+            linex()
+        else:
+            cookie = (";").join([ "%s=%s" % (key,value) for key,value in ses.cookies.get_dict().items()])
+            print(f"{X} SUCCESS - {G}{uid}|MrCode@123|{cookie}")
+            open("/sdcard/SUCCESS-OK-ID.txt","a").write(uid+"|MrCode@123|"+cookie+"\n")
+            linex()
+    except Exception as e:
+        linex()
+        pass
 
-
-
-import requests
-
-cookies = {
-    'datr': 'Lo4vZ5sKrHmuKkkVf1sqXLgc',
-    'sb': 'x4N3Zxh0PwvOch3gN49HKkzR',
-    'c_user': '61572374241804',
-    'fr': '0qLiDDXWY7xeKXjPZ.AWVSaBlwuR2xsZAVHUOwksDImyw.BnL44u..AAA.0.0.BniSqe.AWV7IjH2aXo',
-    'locale': 'en_GB',
-    'xs': '37%3Apub4Iso1AcugOA%3A2%3A1737042601%3A-1%3A-1',
-    'dpr': '3.1883959770202637',
-    'wd': '981x1933',
-}
-
-headers = {
-    'authority': 'www.facebook.com',
-    'accept': '*/*',
-    'accept-language': 'en-US,en;q=0.9,bn-BD;q=0.8,bn;q=0.7',
-    'content-type': 'application/x-www-form-urlencoded',
-    # 'cookie': 'datr=Lo4vZ5sKrHmuKkkVf1sqXLgc; sb=x4N3Zxh0PwvOch3gN49HKkzR; c_user=61572374241804; fr=0qLiDDXWY7xeKXjPZ.AWVSaBlwuR2xsZAVHUOwksDImyw.BnL44u..AAA.0.0.BniSqe.AWV7IjH2aXo; locale=en_GB; xs=37%3Apub4Iso1AcugOA%3A2%3A1737042601%3A-1%3A-1; dpr=3.1883959770202637; wd=981x1933',
-    'origin': 'https://www.facebook.com',
-    'referer': 'https://www.facebook.com/confirmemail.php?next=https%3A%2F%2Fwww.facebook.com%2F%3Flsrc%3Dlbr&__req=a',
-    'sec-ch-prefers-color-scheme': 'dark',
-    'sec-ch-ua': '"Not-A.Brand";v="99", "Chromium";v="124"',
-    'sec-ch-ua-full-version-list': '"Not-A.Brand";v="99.0.0.0", "Chromium";v="124.0.6327.4"',
-    'sec-ch-ua-mobile': '?0',
-    'sec-ch-ua-model': '""',
-    'sec-ch-ua-platform': '"Linux"',
-    'sec-ch-ua-platform-version': '""',
-    'sec-fetch-dest': 'empty',
-    'sec-fetch-mode': 'cors',
-    'sec-fetch-site': 'same-origin',
-    'user-agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36',
-    'x-asbd-id': '129477',
-    'x-fb-lsd': '-3L7pG8HO9efFJn-hlEKfD',
-}
-
-params = {
-    'next': 'https://www.facebook.com/?lsrc=lbr',
-    'cp': 'tarantula5429@mixzu.net',
-    'from_cliff': '1',
-    'conf_surface': 'hard_cliff',
-    'event_location': 'cliff',
-}
-
-data = {
-    'jazoest': '25607',
-    'fb_dtsg': 'NAcOMzsgnnl0hO5OOD58r9exJ3msOj31kxeSR0mhhbEpwqnxZABZcYA:37:1737042601',
-    'code': '26332',
-    'source_verified': 'www_reg',
-    'confirm': '1',
-    '__user': '61572374241804',
-    '__a': '1',
-    '__req': '4',
-    '__hs': '20104.BP:DEFAULT.2.0.0.0.0',
-    'dpr': '3',
-    '__ccg': 'EXCELLENT',
-    '__rev': '1019376741',
-    '__s': 'umjubi:kldxof:bnwan0',
-    '__hsi': '7460541172804187057',
-    '__dyn': '7xeUmBwjbg7ebwKBAg5S3G2O5U4e1Fx-ewSwMxW0DUS2S0im4E9ohwem0nCq1ew8y11wdu0FE5-2G1Qw5Mx61vwnE2PwBgao6C0lW0H83bwdq1iwmE2ewnE2Lw5XwSyES0gq0Lo6-1Fw63w7zwtU5K0UE',
-    '__csr': '',
-    'lsd': '-3L7pG8HO9efFJn-hlEKfD',
-    '__spin_r': '1019376741',
-    '__spin_b': 'trunk',
-    '__spin_t': '1737042603',
-}
-
-response = requests.post(
-    'https://www.facebook.com/confirm_code/dialog/submit/',
-    params=params,
-    cookies=cookies,
-    headers=headers,
-    data=data,
-)
-
-
+if __name__ == "__main__":
+    main()
