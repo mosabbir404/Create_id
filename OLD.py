@@ -10,7 +10,12 @@ class OLD_CLONER:
     
     def banner(self):
         os.system("clear")
-        print("Created    : MOSABBIR HOSSAIN SAJIB")
+        print("Created    :  _      ____  ____  ____  ____  ____  _  ____ 
+/ \__/|/  _ \/ ___\/  _ \/  _ \/  _ \/ \/  __\
+| |\/||| / \||    \| / \|| | //| | //| ||  \/|
+| |  ||| \_/|\___ || |-||| |_\\| |_\\| ||    /
+\_/  \|\____/\____/\_/ \|\____/\____/\_/\_/\_\
+                                              ")
         print("GITHAB     : Mosabbir404")
         print("FEATURE    : OLD ID CLONER")
         print("VERSION    : 0.1 private")
@@ -20,10 +25,12 @@ class OLD_CLONER:
         self.banner()
         print("1 -> 2009 IDS CLONE")
         print("2 -> 2010 IDS CLONE")
+        print("3 -> 2015 IDS CLONE")
         print("-------------------------------")
         select = input("SELECT OPTION : ")
         if select == "1":self.oldClone("2009")
         elif select == "2":self.oldClone("2010")
+        elif select == "3":self.oldClone("2015")
         else:self.main()
     
     def oldClone(self,series):
@@ -34,10 +41,13 @@ class OLD_CLONER:
         elif series == "2010":
             self.uX = "10000"
             self.uG = 10
+        elif series == "2015":
+            self.uX = "100000"
+            self.uG = 15
         else:
             self.uX = "100000"
             self.uG = 9
-        print("EXAMPLE  - 5000,10000")
+        print("EXAMPLE  - 5000,10000,999999")
         limit = int(input("SELECT   - "))
         for a in range(limit):
             aiman = "".join(random.choice(string.digits) for _ in range(self.uG))
