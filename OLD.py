@@ -10,7 +10,7 @@ class OLD_CLONER:
     
     def banner(self):
         os.system("clear")
-        print:("__  __                 _     _     _      
+        print("__  __                 _     _     _      
  |  \/  |               | |   | |   (_)     
  | \  / | ___  ___  __ _| |__ | |__  _ _ __ 
  | |\/| |/ _ \/ __|/ _` | '_ \| '_ \| | '__|
