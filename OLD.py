@@ -10,13 +10,8 @@ class OLD_CLONER:
     
     def banner(self):
         os.system("clear")
-        print("__  __                 _     _     _      
- |  \/  |               | |   | |   (_)     
- | \  / | ___  ___  __ _| |__ | |__  _ _ __ 
- | |\/| |/ _ \/ __|/ _` | '_ \| '_ \| | '__|
- | |  | | (_) \__ \ (_| | |_) | |_) | | |   
- |_|  |_|\___/|___/\__,_|_.__/|_.__/|_|_|   ")
-        print("GITHUB     : Mosabbir404")
+        print("Created    : MOSABBIR HOSSAIN SAJIB")
+        print("GITHAB     : Mosabbir404")
         print("FEATURE    : OLD ID CLONER")
         print("VERSION    : 0.1 private")
         print("-------------------------------")
