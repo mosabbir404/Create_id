@@ -232,7 +232,7 @@ def confirm_id(mail,uid,otp,data,ses):
         else:
             cookie = (";").join([ "%s=%s" % (key,value) for key,value in ses.cookies.get_dict().items()])
             print(f"{X} SUCCESS - {G}{uid}|mosabbir|{cookie}")
-            open("/sdcard/New-ID.txt","a").write(uid+"|mosabbir|"+cookie+"|"+otp+"\n")
+            open("/sdcard/New-ID.txt","a").write(uid+"|mosabbir|"+otp+"|"+cookie+"\n")
             linex()
     except Exception as e:
         linex()
