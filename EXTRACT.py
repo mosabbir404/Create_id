@@ -16,7 +16,13 @@ class Mr_Code:
     
     def banner(self):
         os.system("clear")
-        print("DEVELOPER  : MOSABBIR HOSSAIN  ")
+        print(" ___  ___                _     _     _       
+                    |  \/  |               | |   | |   (_)      
+                    | .  . | ___  ___  __ _| |__ | |__  _ _ __  
+                    | |\/| |/ _ \/ __|/ _` | '_ \| '_ \| | '__| 
+                    | |  | | (_) \__ \ (_| | |_) | |_) | | |    
+                    \_|  |_/\___/|___/\__,_|_.__/|_.__/|_|_| ")
+        print("DEVELOPER: MOSABBIR HOSSAIN ")
         print("FEATURE    : RANDOM CLONER")
         print("VERSION    : 0.1")
         print("----------------------------------")
