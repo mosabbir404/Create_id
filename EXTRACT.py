@@ -15,7 +15,7 @@ class Mr_Code:
         self.gen = []
     
     def banner(self):
-        os.system("clear"
+        os.system("clear",,
         print("DEVELOPER  : MOSABBIR HOSSAIN  ")
         print("FEATURE    : RANDOM CLONER")
         print("VERSION    : 0.1")
