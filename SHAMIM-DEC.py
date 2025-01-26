@@ -193,4 +193,3 @@ def server():
             print(' internet error ')
             sys.exit()
 #__________/END-CALL\__________#
-server();main)
