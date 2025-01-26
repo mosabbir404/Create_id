@@ -113,17 +113,6 @@ def login(uid):
         loop+=1
     except Exception as e:
         pass
-#__________/DATA-BASE\__________#
-def server():
-    database = requests.get('https://raw.githubusercontent.com/Noor-143/Control-room/main/ON-OFF-UPDATE-FREE-TRAIL.txt').text
-    if 'on' in database:
-        print('\x1b[38;5;46m[✔️TOOL IS ON')
-    elif 'off' in database:
-        print('\x1b[38;5;46m[✔️TOOL IS UPDATING')
-        for j in range(4000):
-            time.sleep(4)
-            #os.system('xdg-open https://t.me/termux_hacker_shamim')
-            print('\x1b[1;92m Tool is updating Wait For Complete The Update')
-            print(' internet error ')
-            sys.exit()
+
 #__________/END-CALL\__________#
+
