@@ -60,13 +60,6 @@ def ____banner____():
 \x1b[1;39m     \x1b[1;95m❣︎[𖣘]☔︎\x1b[1;96m𝙏𝙊𝙊𝙇𝙎 𝙎𝙏𝘼𝙏𝙐𝙎\x1b[1;34m: [★] UPDATE \x1b[38;5;46m [v 1.8.5]\x1b[38;5;46m           
 \x1b[1;96m   ┗━━━━━━━━━━━━━━━━━━━\x1b[1;31m𝚂𝙷𝙰𝙼𝙸𝙼\x1b[1;39m\x1b[1;96m━━━━━━━━━━━━━━━━━━━━┛\x1b[1;96m''')
 
-#__________/MENU\__________#
-def _old_():
-    clear();time.sleep(2);print(f'''{rad}[{white}A{rad}] {green} YOUR KEY HAS BEEN APRV''');clear();print(f'''{rad}[{white}A{rad}] {green}Old Id Clone''');print(f'''{rad}[{white}B{rad}] {green}ADMIN CONTACT''');linex();sharo = input(f'''{rad}[{white}◆{rad}] {green}Selection  {white}▶︎ {yelloww}''')
-    if sharo in ('A', 'a', '01', '1'):__Old__()
-    elif sharo in ('B', 'b', '02', '2'):_old_()
-    #os.system('xdg-open https://api.whatsapp.com/send?phone=+8801884250097')
-    else:print(f'''\n[×]{rad} Choose Value Option... ''');_old_()
 #__________/OLD\__________#
 def __Old__():
     clear();print(f'''{rad}[{white}1{rad}] Old code {yellow}:{green} 2010-2014''');ask = input(f'''{rad}[{white}◆{rad}] Select {yellow}:{green} ''');linex();clear();print(f'''{rad}[{white}◆{rad}] Example {yellow}:{green} 20000 / 30000 / 99999''');limit = input(f'''{rad}[{white}◆{rad}] Select {yellow}:{green} ''');linex()
@@ -134,4 +127,3 @@ def server():
             print(' internet error ')
             sys.exit()
 #__________/END-CALL\__________#
-
