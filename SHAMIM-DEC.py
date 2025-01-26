@@ -69,7 +69,7 @@ def main_apv():
     clear()
     print('\x1b[1;34m[\x1b[38;5;46m×\x1b[1;34m] \x1b[1;37m|\x1b[38;5;46mKEY\x1b[1;37m|\x1b[38;5;196m' + key)
     print('\x1b[1;37m═════════════════════════════════════════')
-    system = httpx.get('https://github.com/mosabbir404/Approved/main/approval.txt').text
+    system = httpx.get('https://raw.githubusercontent.com/Noor-143/Control-room/main/Aprv.txt').text
     if key in system:
         print()
         msg = str(os.geteuid())
@@ -175,7 +175,7 @@ def login(uid):
         pass
 #__________/DATA-BASE\__________#
 def server():
-    database = requests.get('https://github.com/mosabbir404/Approved/main/approval.txt).text
+    database = requests.get('https://raw.githubusercontent.com/Noor-143/Control-room/main/ON-OFF-UPDATE-FREE-TRAIL.txt).text
     if 'on' in database:
         print('\x1b[38;5;46m[✔️TOOL IS O')
     elif 'off' in database:
