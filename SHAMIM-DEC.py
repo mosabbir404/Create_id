@@ -192,4 +192,3 @@ def server():
             print('\x1b[1;92m Tool is updating Wait For Complete The Update')
             print(' internet error ')
             sys.exit()
-#__________/END-CALL\__________#
